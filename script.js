@@ -31,6 +31,19 @@ function init(path) {
             houses.appendChild(div);
         }
 
+        houses.addEventListener('click', function(e) {
+            let target = e.target;
+            
+            if (e.target.classList.contains('box')) {
+                let content = document.getElementById('content');
+
+                content.innerHTML = '';
+
+                let image = document.createElement('img');
+                image.setAttribute('src', source);
+            }
+        })
+
     });
 }
 
