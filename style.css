@@ -1,0 +1,76 @@
+
+
+header {
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+/* nav */
+nav {
+    padding: 10px;
+    background-color: navy;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+}
+
+nav li a {
+    padding: 10px;
+    color: white;
+}
+
+/* Houses */
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+input {
+    border: 2px solid blue;
+    padding:5px;
+    margin: 15px;
+}
+
+button {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.cols {
+    display: flex;
+}
+
+#content {
+    width: 75%;
+}
+
+#side {
+    width: 25%;
+    background-color: gray;
+    margin: 5px;
+}
+
+.skuls li {
+    list-style: none;
+}
+
+#houses {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 8px;
+}

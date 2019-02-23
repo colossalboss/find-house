@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Self Contain",
+        "price": "$200.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/4.jpg"
+    },
+
+    {
+        "name": "Flat",
+        "price": "$299.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/5.jpg"
+    },
+
+    {
+        "name": "Flat",
+        "price": "$399.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/6.jpg"
+    },
+
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/7.jpg"
+    },
+
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/8.jpg"
+    },
+
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/9.jpg"
+    }
+]
