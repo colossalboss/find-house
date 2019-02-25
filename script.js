@@ -23,6 +23,7 @@ function init(path) {
             elem.setAttribute('src', response[i].src);
             elem.setAttribute('id', response[i].id);
             elem.classList.add('box');
+            div.classList.add('image-box', 'box-space');
 
             div.appendChild(elem);
             div.appendChild(name);
@@ -49,13 +50,15 @@ function init(path) {
                         image.classList.add('big-image');
                         content.appendChild(image);
                         
+                        let info = document.createElement('div');
+                        info.classList.add('display');
                         for (let item in res) {
                             console.log(res[item]);
                             if (item !== 'src' && item !== 'id') {
-                                let info = document.createElement('div');
+
                                 let detail = document.createElement('p');
                                 detail.classList.add('bigger-text');
-                                detail.textContent = `${item}: ${res[item]}`;
+                                detail.textContent = `${item}: ${res[item]} `;
                                 info.appendChild(detail);
                                 content.appendChild(info);
                             }
