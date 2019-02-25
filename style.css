@@ -74,3 +74,15 @@ button {
     margin: 10px;
     border-radius: 8px;
 }
+
+.bigger-text {
+    font-size: 20px;
+}
+
+.big-image {
+    width: 70%;
+    height: 500px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px grey;
+}

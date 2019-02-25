@@ -21,6 +21,7 @@ function init(path) {
 
             let elem = document.createElement('img');
             elem.setAttribute('src', response[i].src);
+            elem.setAttribute('id', response[i].id);
             elem.classList.add('box');
 
             div.appendChild(elem);
@@ -28,10 +29,10 @@ function init(path) {
             div.appendChild(price);
             div.appendChild(loc);
 
-            houses.appendChild(div);
+            content.appendChild(div);
         }
 
-        houses.addEventListener('click', function(e) {
+        content.addEventListener('click', function(e) {
             let target = e.target;
             
             if (e.target.classList.contains('box')) {
@@ -39,8 +40,41 @@ function init(path) {
 
                 content.innerHTML = '';
 
-                let image = document.createElement('img');
-                image.setAttribute('src', source);
+                for (let res of response) {
+                    if (target.id === res.id) {
+                        
+                        
+                        let image = document.createElement('img');
+                        image.setAttribute('src', res.src);
+                        image.classList.add('big-image');
+                        content.appendChild(image);
+                        
+                        for (let item in res) {
+                            console.log(res[item]);
+                            if (item !== 'src' && item !== 'id') {
+                                let info = document.createElement('div');
+                                let detail = document.createElement('p');
+                                detail.classList.add('bigger-text');
+                                detail.textContent = `${item}: ${res[item]}`;
+                                info.appendChild(detail);
+                                content.appendChild(info);
+                            }
+                        }
+
+                        let back = document.createElement('button');
+
+                        back.textContent = 'Go Back';
+                        back.classList.add('back');
+
+                        content.appendChild(back);
+
+                        back.addEventListener('click', function() {
+                            content.innerHTML = '';
+                            init('gallery.json');
+                        });
+                    }
+                }
+
             }
         })
 
