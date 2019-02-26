@@ -1,6 +1,7 @@
 let search = document.getElementById('search');
 let houses = document.getElementById('houses');
-let nameDiv = document.getElementById('name');
+let find = document.getElementById('find');
+
 
 
 function init(path) {
@@ -85,3 +86,11 @@ function init(path) {
 }
 
 init('gallery.json');
+
+
+find.addEventListener('click', function(e) {
+    e.preventDefault();
+    content.innerHTML = '';
+
+    init('gallery.json');
+});
