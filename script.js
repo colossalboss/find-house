@@ -80,7 +80,11 @@ function init(path) {
                 }
 
             }
-        })
+        });
+
+        function searchByArea() {
+            
+        }
 
     });
 }

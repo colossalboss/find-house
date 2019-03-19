@@ -28,6 +28,20 @@ nav li a {
     color: white;
 }
 
+#zones li {
+    list-style: none;
+    padding: 7px
+}
+
+#zones li a {
+    text-decoration: darkblue;
+}
+
+#zones li a:hover {
+    color: white;
+    background-color: black;
+}
+
 /* Houses */
 
 footer {
