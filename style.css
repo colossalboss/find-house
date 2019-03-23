@@ -137,7 +137,7 @@ button {
 .image-box {
     background-color: aquamarine;
     width: 300px;
-    /* height: 400px; */
+    height: fit-content;
     margin: auto;
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
