@@ -120,13 +120,16 @@ button {
     /* margin: auto; */
 }
 .own-div {
+    width: 40%;
+    min-width: 200px;
     box-shadow: 5px 5px 5px grey;
     height: fit-content;
-    margin: auto;
+    margin: 2% auto;
 }
 
 .skul-div {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
     /* width: 90%; */
 }
@@ -139,14 +142,6 @@ button {
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
     /* align-content: center */
-}
-
-.display {
-    /* display: block !important; */
-}
-
-.box-space {
-    /* margin-top: 4px; */
 }
 
 .box:hover {
