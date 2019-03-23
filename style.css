@@ -113,6 +113,24 @@ button {
     box-shadow: 5px 5px 10px grey;
 }
 
+/* Skul Div */
+.own-div img {
+    width: 80%;
+    border-radius: 8px;
+    /* margin: auto; */
+}
+.own-div {
+    box-shadow: 5px 5px 5px grey;
+    height: fit-content;
+    margin: auto;
+}
+
+.skul-div {
+    display: flex;
+    text-align: center;
+    /* width: 90%; */
+}
+
 .image-box {
     background-color: aquamarine;
     width: 300px;

@@ -82,9 +82,51 @@ function init(path) {
             }
         });
 
-        function searchByArea() {
+        function searchByArea(e) {
+            e.preventDefault();
+            let arr = [];
+            if (e.target.classList.contains('skul')) {
+                let mySearch = e.target.textContent;
+                console.log({mySearch});
+
+                for (let res of response) {
+                    if (res.school === mySearch) {
+                        arr.push(res);
+                        content.innerHTML = '';
+                    }
+                    console.log(res.school)
+                }
+            }
             
+
+            let skulDiv = document.createElement('div');
+            skulDiv.classList.add('skul-div');
+            for (let itm of arr) {
+                let ownDiv = document.createElement('div');
+                let textDiv = document.createElement('div');
+                let ddd = document.createElement('img');
+                ddd.setAttribute('src', itm["src"]);
+                textDiv.classList.add('text-div');
+
+                for (let idx in itm) {
+                    if (idx !== 'src' && idx !== 'description' && idx !== 'id') {
+                        console.log(itm[idx]);
+                        let text = document.createElement('h4');
+                        text.textContent = itm[idx];
+                        textDiv.appendChild(text);
+                    }
+                }
+
+                ownDiv.appendChild(ddd);
+                ownDiv.appendChild(textDiv);
+                ownDiv.classList.add('own-div');
+                skulDiv.appendChild(ownDiv);
+            }
+            content.appendChild(skulDiv);
         }
+
+        let schools = document.getElementById('skul');
+        schools.addEventListener('click', searchByArea);
 
     });
 }
