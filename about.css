@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    padding: 10px;
+    background-color: navy;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+}
+
+nav li a {
+    padding: 10px;
+    color: white;
+}
+
+#story {
+    width: 60%;
+    text-align: justify;
+    margin: auto;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    /* padding: 1px; */
+}
