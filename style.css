@@ -55,8 +55,13 @@ input {
     border: 2px solid blue;
     width: 80%;
     padding:5px;
-    margin: 8px;
+    margin: 1px 8px;
     border-radius: 8px;
+}
+
+.reg {
+    color: #fff;
+    margin-left: 8px;
 }
 
 .primary {
