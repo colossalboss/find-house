@@ -193,6 +193,17 @@ h2.by-area  {
     cursor: pointer;
 }
 
+a.skul {
+    text-decoration: none;
+}
+a.skul:hover {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid grey;
+    border-radius: 8px;
+    padding: 0 19px;
+}
+
  @media screen and (max-width: 960px) {
     .image-box {
         max-width: 200px;
