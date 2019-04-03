@@ -121,6 +121,7 @@ h2.by-area  {
     width: 25%;
     background-color: rgba(99, 0, 455, 0.5);
     margin: 5px;
+    border-radius: 8px;
 }
 
 .skuls li {
