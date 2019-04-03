@@ -20,6 +20,14 @@ h2 {
     color: #000;
 }
 
+.back {
+    border-radius: 8px;
+}
+
+#btn {
+    border-radius: 8px;
+}
+
 /* nav */
 nav {
     padding: 10px;
@@ -93,6 +101,11 @@ button {
     color: white;
     cursor: pointer;
     margin: 15px;
+}
+
+button:hover {
+    border: 2px solid green;
+    transform: scale(1.5);
 }
 
 h2.by-area  {
