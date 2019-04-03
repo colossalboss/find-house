@@ -34,11 +34,12 @@ nav li a {
 
 #zones li {
     list-style: none;
-    padding: 7px
+    padding: 7px;
+    
 }
 
 #zones li a {
-    text-decoration: darkblue;
+    text-decoration: none;
 }
 
 #zones li a:hover {
@@ -53,6 +54,10 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+footer h2 {
+    color: white;
 }
 
 input {
@@ -84,8 +89,13 @@ button {
     margin: 15px;
 }
 
+
 .cols {
     display: flex;
+}
+
+a.skul {
+    color: #000;
 }
 
 #side {
