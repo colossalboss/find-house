@@ -82,6 +82,7 @@ function init(path) {
             }
         });
 
+        // Search by school
         function searchByArea(e) {
             e.preventDefault();
             let arr = [];
@@ -106,6 +107,10 @@ function init(path) {
                 let textDiv = document.createElement('div');
                 let ddd = document.createElement('img');
                 ddd.setAttribute('src', itm["src"]);
+                ddd.setAttribute('id', itm["id"]);
+
+                // Add box as a class
+                ddd.classList.add('box');
                 textDiv.classList.add('text-div');
 
                 for (let idx in itm) {
