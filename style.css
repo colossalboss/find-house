@@ -12,6 +12,10 @@ header {
     text-align: center;
 }
 
+img.big-image {
+    margin: 2% auto;
+}
+
 h2 {
     color: #000;
 }
