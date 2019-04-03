@@ -34,17 +34,19 @@ nav li a {
 
 #zones li {
     list-style: none;
-    padding: 7px;
-    
+    padding: 7px
 }
 
 #zones li a {
-    text-decoration: none;
+    text-decoration: darkblue;
 }
 
 #zones li a:hover {
+    background-color:#fff;
     color: white;
-    background-color: black;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 0 19px;
 }
 
 /* Houses */
@@ -89,13 +91,12 @@ button {
     margin: 15px;
 }
 
+h2.by-area  {
+    color: #000;
+}
 
 .cols {
     display: flex;
-}
-
-a.skul {
-    color: #000;
 }
 
 #side {
