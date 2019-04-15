@@ -4,12 +4,12 @@ let find = document.getElementById('find');
 
 
 
-function init(path) {
+function init(path, num) {
     $.get(path, function(response) {
 
         console.log(response.length);
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < num; i++) {
 
             let div = document.createElement('div');
             let name = document.createElement('h2')
@@ -74,7 +74,7 @@ function init(path) {
 
                         back.addEventListener('click', function() {
                             content.innerHTML = '';
-                            init('gallery.json');
+                            init('gallery.json', response.length);
                         });
                     }
                 }
@@ -136,12 +136,16 @@ function init(path) {
     });
 }
 
-init('gallery.json');
+init('gallery.json', 7);
 
 
 find.addEventListener('click', function(e) {
     e.preventDefault();
     content.innerHTML = '';
 
-    init('gallery.json');
+    $.get('gallery.json', function(res) {
+        let numOfHouses = res.length;
+        init('gallery.json', numOfHouses);
+    });
+
 });
