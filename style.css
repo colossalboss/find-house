@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: rgba(99, 0, 455, 0.5);
+    background-color: rgba(99, 100, 400, 0.5);
     padding: 10px;
     text-align: center;
 }
@@ -120,7 +120,7 @@ h2.by-area  {
 
 #side {
     width: 25%;
-    background-color: rgba(99, 0, 455, 0.5);
+    background-color: rgba(0, 0, 455, 0.5);
     margin: 5px;
     border-radius: 8px;
 }
@@ -179,7 +179,7 @@ h2.by-area  {
 }
 
 .image-box {
-    background-color: rgba(99, 100, 455, 0.5);
+    background-color: rgba(0, 100, 455, 0.5);
     /* background-color: grey; */
     color: white;
     width: 300px;
