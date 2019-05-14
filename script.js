@@ -150,6 +150,7 @@ function init(path, num) {
     });
 }
 
+// Initialize page with 7 images
 init('gallery.json', 7);
 
 
