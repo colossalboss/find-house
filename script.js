@@ -12,7 +12,10 @@ function init(path, num) {
 
         console.log(response.length, 'lenght');
 
+        //FIXME: Refactor Code Below
+
         /* Loop over response from get*/
+        // Check if images in gallery is more than 12
         if (response.length <= 12) {
             num = response.length;
             for (let i = 0; i < num; i++) {
