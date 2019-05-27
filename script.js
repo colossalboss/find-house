@@ -10,35 +10,66 @@ function init(path, num) {
     /* Get json file */
     $.get(path, function(response) {
 
-        console.log(response.length);
+        console.log(response.length, 'lenght');
 
         /* Loop over response from get*/
-        for (let i = 0; i < num; i++) {
+        if (response.length <= 12) {
+            num = response.length;
+            for (let i = 0; i < num; i++) {
 
-            /* Create elements to hold info from response */
-            let div = document.createElement('div');
-            let name = document.createElement('h2')
-            let price = document.createElement('h3');
-            let loc = document.createElement('h3');
+                /* Create elements to hold info from response */
+                let div = document.createElement('div');
+                let name = document.createElement('h2')
+                let price = document.createElement('h3');
+                let loc = document.createElement('h3');
+    
+                /* Add text content to dynamically created elements */
+                name.textContent = response[i].name;
+                price.textContent = response[i].price;
+                loc.textContent = response[i].location;
+    
+                /* Create image */
+                let elem = document.createElement('img');
+                elem.setAttribute('src', response[i].src);
+                elem.setAttribute('id', response[i].id);
+                elem.classList.add('box');
+                div.classList.add('image-box', 'box-space');
+    
+                div.appendChild(elem);
+                div.appendChild(name);
+                div.appendChild(price);
+                div.appendChild(loc);
+    
+                content.appendChild(div);
+            }
+        } else {
+            for (let i = 0; i < num; i++) {
 
-            /* Add text content to dynamically created elements */
-            name.textContent = response[i].name;
-            price.textContent = response[i].price;
-            loc.textContent = response[i].location;
-
-            /* Create image */
-            let elem = document.createElement('img');
-            elem.setAttribute('src', response[i].src);
-            elem.setAttribute('id', response[i].id);
-            elem.classList.add('box');
-            div.classList.add('image-box', 'box-space');
-
-            div.appendChild(elem);
-            div.appendChild(name);
-            div.appendChild(price);
-            div.appendChild(loc);
-
-            content.appendChild(div);
+                /* Create elements to hold info from response */
+                let div = document.createElement('div');
+                let name = document.createElement('h2')
+                let price = document.createElement('h3');
+                let loc = document.createElement('h3');
+    
+                /* Add text content to dynamically created elements */
+                name.textContent = response[i].name;
+                price.textContent = response[i].price;
+                loc.textContent = response[i].location;
+    
+                /* Create image */
+                let elem = document.createElement('img');
+                elem.setAttribute('src', response[i].src);
+                elem.setAttribute('id', response[i].id);
+                elem.classList.add('box');
+                div.classList.add('image-box', 'box-space');
+    
+                div.appendChild(elem);
+                div.appendChild(name);
+                div.appendChild(price);
+                div.appendChild(loc);
+    
+                content.appendChild(div);
+            }
         }
 
         /* Handle Clicks */
@@ -151,7 +182,7 @@ function init(path, num) {
 }
 
 // Initialize page with 7 images
-init('gallery.json', 7);
+init('gallery.json', 12);
 
 
 find.addEventListener('click', function(e) {
