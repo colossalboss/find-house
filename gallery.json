@@ -130,5 +130,56 @@
         "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
         "contact": "1234567890",
         "school": "Uniben"
+    },
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/13.jpg",
+        "id": "13",
+        "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
+        "contact": "1234567890",
+        "school": "Uniben"
+    },
+
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/14.jpg",
+        "id": "14",
+        "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
+        "contact": "1234567890",
+        "school": "Uniben"
+    },
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/15.jpg",
+        "id": "15",
+        "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
+        "contact": "1234567890",
+        "school": "NDU"
+    },
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/16.jpg",
+        "id": "16",
+        "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
+        "contact": "1234567890",
+        "school": "Uniben"
+    },
+    {
+        "name": "Duplex",
+        "price": "$499.99",
+        "location": "Amassoma, Bayelsa State",
+        "src": "img/17.jpg",
+        "id": "17",
+        "description": "Having needed an pure javascript alternative to jQuery's $.getJSON() and $.parseJSON() recently I thought I would try and clear this up for future users. There is a lot of misinformation out there on the web. By far the main trouble maker is the belief that by including a .JSON file between the head tags of your HTML document you can access structured JSON",
+        "contact": "1234567890",
+        "school": "NDU"
     }
 ]
