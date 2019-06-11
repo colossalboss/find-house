@@ -2,7 +2,23 @@ let search = document.getElementById('search');
 let houses = document.getElementById('houses');
 let find = document.getElementById('find');
 
+const addDetails = (div, name, price, loc, i, elem, response) => {
+    name.textContent = response[i].name;
+    price.textContent = response[i].price;
+    loc.textContent = response[i].location;
 
+    elem.setAttribute('src', response[i].src);
+    elem.setAttribute('id', response[i].id);
+    elem.classList.add('box');
+    div.classList.add('image-box', 'box-space');
+
+    div.appendChild(elem);
+    div.appendChild(name);
+    div.appendChild(price);
+    div.appendChild(loc);
+
+    content.appendChild(div);
+}
 
 function init(path, num) {
     $.get(path, function(response) {
@@ -15,23 +31,9 @@ function init(path, num) {
             let name = document.createElement('h2')
             let price = document.createElement('h3');
             let loc = document.createElement('h3');
-
-            name.textContent = response[i].name;
-            price.textContent = response[i].price;
-            loc.textContent = response[i].location;
-
             let elem = document.createElement('img');
-            elem.setAttribute('src', response[i].src);
-            elem.setAttribute('id', response[i].id);
-            elem.classList.add('box');
-            div.classList.add('image-box', 'box-space');
 
-            div.appendChild(elem);
-            div.appendChild(name);
-            div.appendChild(price);
-            div.appendChild(loc);
-
-            content.appendChild(div);
+            addDetails(div, name, price, loc, i, elem, response);  
         }
 
         content.addEventListener('click', function(e) {
@@ -56,18 +58,25 @@ function init(path, num) {
                         image.classList.add('big-image');
                         content.appendChild(image);
                         
+                        /* Display image informarion */
                         let info = document.createElement('div');
                         info.classList.add('display');
-                        for (let item in res) {
-                            console.log(res[item]);
-                            if (item !== 'src' && item !== 'id') {
-
-                                let detail = document.createElement('p');
-                                detail.classList.add('bigger-text');
-                                detail.textContent = `${item}: ${res[item]} `;
-                                info.appendChild(detail);
-                                content.appendChild(info);
-                            }
+                        for (let obj of response) {
+                            console.log(Object.keys(obj));
+                            
+                            let {name, price, description, id} = obj
+                                console.log(name, 'id')
+                                if (target.id === id) {
+                                    for (let x in obj) {
+                                        if (x !== 'src' && x !== 'id') {
+                                            let detail = document.createElement('p');
+                                            detail.classList.add('bigger-text');
+                                            detail.textContent = `${x}: ${obj[x]} `;
+                                            info.appendChild(detail);
+                                            content.appendChild(info);
+                                        }
+                                    }
+                                }
                         }
 
                         let back = document.createElement('button');
@@ -154,15 +163,3 @@ find.addEventListener('click', function(e) {
     });
 
 });
-
-// TEST
-const stuff = () => {
-    let getResult = $.get('gallery.json', function(resp) {
-       return resp;
-    });
-    return getResult;
-}
-
-const files = stuff();
-let [,,,,,,,,,,, rel] = files.responseJSON;
-console.log(files);
