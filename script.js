@@ -3,6 +3,7 @@ let houses = document.getElementById('houses');
 let find = document.getElementById('find');
 let content = document.getElementById('content');
 let skulDiv = document.createElement('div');
+let schools = document.getElementById('skul');
 
 
 const emptyContent = (container) => content.innerHTML = '';
@@ -108,10 +109,13 @@ function init(path, num) {
         function searchByArea(e) {
             e.preventDefault();
             let arr = [];
+
+            // If clicked element has CSS class of 'skul', get its text 
             if (e.target.classList.contains('skul')) {
                 let mySearch = e.target.textContent;
                 console.log({mySearch});
 
+                /*loop through response get all houses within the clicked school and put in an array */
                 for (let res of response) {
                     if (res.school === mySearch) {
                         arr.push(res);
@@ -123,6 +127,9 @@ function init(path, num) {
             
 
             skulDiv.classList.add('skul-div');
+
+            /* Loop through the array of houses within the same school
+               and display their image and info */
             for (let itm of arr) {
                 let ownDiv = document.createElement('div');
                 let textDiv = document.createElement('div');
@@ -151,12 +158,12 @@ function init(path, num) {
             content.appendChild(skulDiv);
         }
 
-        let schools = document.getElementById('skul');
         schools.addEventListener('click', searchByArea);
 
     });
 }
 
+// Display houses on page load
 init('gallery.json', 7);
 
 /* Load all houses when find house button is clicked */
