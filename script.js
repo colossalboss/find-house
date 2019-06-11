@@ -1,98 +1,58 @@
-/* Declare Variables*/
-
 let search = document.getElementById('search');
 let houses = document.getElementById('houses');
 let find = document.getElementById('find');
 
 
-/* Initialize function */
+
 function init(path, num) {
-    /* Get json file */
     $.get(path, function(response) {
 
-        console.log(response.length, 'lenght');
+        console.log(response.length);
 
-        //FIXME: Refactor Code Below
+        for (let i = 0; i < num; i++) {
 
-        /* Loop over response from get*/
-        // Check if images in gallery is more than 12
-        if (response.length <= 12) {
-            num = response.length;
-            for (let i = 0; i < num; i++) {
+            let div = document.createElement('div');
+            let name = document.createElement('h2')
+            let price = document.createElement('h3');
+            let loc = document.createElement('h3');
 
-                /* Create elements to hold info from response */
-                let div = document.createElement('div');
-                let name = document.createElement('h2')
-                let price = document.createElement('h3');
-                let loc = document.createElement('h3');
-    
-                /* Add text content to dynamically created elements */
-                name.textContent = response[i].name;
-                price.textContent = response[i].price;
-                loc.textContent = response[i].location;
-    
-                /* Create image */
-                let elem = document.createElement('img');
-                elem.setAttribute('src', response[i].src);
-                elem.setAttribute('id', response[i].id);
-                elem.classList.add('box');
-                div.classList.add('image-box', 'box-space');
-    
-                div.appendChild(elem);
-                div.appendChild(name);
-                div.appendChild(price);
-                div.appendChild(loc);
-    
-                content.appendChild(div);
-            }
-        } else {
-            for (let i = 0; i < num; i++) {
+            name.textContent = response[i].name;
+            price.textContent = response[i].price;
+            loc.textContent = response[i].location;
 
-                /* Create elements to hold info from response */
-                let div = document.createElement('div');
-                let name = document.createElement('h2')
-                let price = document.createElement('h3');
-                let loc = document.createElement('h3');
-    
-                /* Add text content to dynamically created elements */
-                name.textContent = response[i].name;
-                price.textContent = response[i].price;
-                loc.textContent = response[i].location;
-    
-                /* Create image */
-                let elem = document.createElement('img');
-                elem.setAttribute('src', response[i].src);
-                elem.setAttribute('id', response[i].id);
-                elem.classList.add('box');
-                div.classList.add('image-box', 'box-space');
-    
-                div.appendChild(elem);
-                div.appendChild(name);
-                div.appendChild(price);
-                div.appendChild(loc);
-    
-                content.appendChild(div);
-            }
+            let elem = document.createElement('img');
+            elem.setAttribute('src', response[i].src);
+            elem.setAttribute('id', response[i].id);
+            elem.classList.add('box');
+            div.classList.add('image-box', 'box-space');
+
+            div.appendChild(elem);
+            div.appendChild(name);
+            div.appendChild(price);
+            div.appendChild(loc);
+
+            content.appendChild(div);
         }
 
-        /* Handle Clicks */
         content.addEventListener('click', function(e) {
             let target = e.target;
             
-            /* Check if click is on an image */
             if (e.target.classList.contains('box')) {
                 let content = document.getElementById('content');
 
-                // Clear Content
                 content.innerHTML = '';
 
-                /* Loop through response from $.get to find clicked element */
-                for (let res of response) {
-                    if (target.id === res.id) {
+                // for (let res of response) {
+                for (let {id: res, src: path} of response) {
+                    console.log(res);
+                    
+                    // if (target.id === res.id) {
+                    if (target.id === res) {
                         
-                        /* Create image element and display it and its info */
+                        
                         let image = document.createElement('img');
-                        image.setAttribute('src', res.src);
+                        // image.setAttribute('src', res.src);
+                        image.setAttribute('src', path);
                         image.classList.add('big-image');
                         content.appendChild(image);
                         
@@ -100,7 +60,6 @@ function init(path, num) {
                         info.classList.add('display');
                         for (let item in res) {
                             console.log(res[item]);
-                            /* Avoid displaying src and id of image */
                             if (item !== 'src' && item !== 'id') {
 
                                 let detail = document.createElement('p');
@@ -111,7 +70,6 @@ function init(path, num) {
                             }
                         }
 
-                        //Create a button 
                         let back = document.createElement('button');
 
                         back.textContent = 'Go Back';
@@ -119,7 +77,6 @@ function init(path, num) {
 
                         content.appendChild(back);
 
-                        /* Restore page when go back button is clicked */
                         back.addEventListener('click', function() {
                             content.innerHTML = '';
                             init('gallery.json', response.length);
@@ -184,8 +141,7 @@ function init(path, num) {
     });
 }
 
-// Initialize page with 7 images
-init('gallery.json', 12);
+init('gallery.json', 7);
 
 
 find.addEventListener('click', function(e) {
@@ -198,3 +154,15 @@ find.addEventListener('click', function(e) {
     });
 
 });
+
+// TEST
+const stuff = () => {
+    let getResult = $.get('gallery.json', function(resp) {
+       return resp;
+    });
+    return getResult;
+}
+
+const files = stuff();
+let [,,,,,,,,,,, rel] = files.responseJSON;
+console.log(files);
