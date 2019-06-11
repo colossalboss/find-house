@@ -141,6 +141,12 @@ h2.by-area  {
     margin: 0 auto;
 }
 
+#content {
+    width: 90%;
+    padding-left: 5.5em;
+    margin: auto;
+}
+
 .box {
     width: 100%;
     border-radius: 8px;
@@ -181,15 +187,13 @@ h2.by-area  {
 
 .image-box {
     background-color: rgba(0, 100, 455, 0.5);
-    /* background-color: grey; */
     color: white;
-    width: 300px;
+    width: 30%;
     height: fit-content;
-    margin: auto;
-    padding: 4px;
+    margin: 2em auto;
+    padding: 0.5em;
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
-    /* align-content: center */
 }
 
 .box:hover {
@@ -253,22 +257,22 @@ a.skul:hover {
     font-size: 1.3em;
 }
 
- @media screen and (max-width: 960px) {
+ /* @media screen and (max-width: 960px) {
     .image-box {
         max-width: 200px;
         margin: 2% auto;
     }
-}
+} */
 
-@media screen and (min-width: 960px) {
+/* @media screen and (min-width: 960px) {
     .image-box {
         max-width: 240px;
         margin: 1% auto;
     }
-}
+} */
 
-@media screen and (max-width: 670px) {
+/* @media screen and (max-width: 670px) {
     .big-image {
         height: 350px;
     }
-}
+} */
