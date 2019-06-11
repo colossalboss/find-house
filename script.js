@@ -33,6 +33,7 @@ function init(path, num) {
             let loc = document.createElement('h3');
             let elem = document.createElement('img');
 
+            // Add name, price, location details to small image
             addDetails(div, name, price, loc, i, elem, response);  
         }
 
