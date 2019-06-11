@@ -207,6 +207,15 @@ a.skul:hover {
     padding: 0 19px;
 }
 
+.bold-text {
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.prop-text {
+    line-height: 40px;
+}
+
  @media screen and (max-width: 960px) {
     .image-box {
         max-width: 200px;

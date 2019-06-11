@@ -78,8 +78,17 @@ function init(path, num) {
                                     for (let x in obj) {
                                         if (x !== 'src' && x !== 'id') {
                                             let detail = document.createElement('p');
+                                            let propSpan = document.createElement('span');
+                                            let valSpan = document.createElement('span');
+                                            propSpan.classList.add('bold-text');
+                                            valSpan.classList.add('prop-text')
+                                            propSpan.textContent = `${x}: `;
+                                            valSpan.textContent = obj[x];
+                                            detail.appendChild(propSpan);
+                                            detail.appendChild(valSpan);
+
                                             detail.classList.add('bigger-text');
-                                            detail.textContent = `${x}: ${obj[x]} `;
+                                            // detail.textContent = `${x}: ${obj[x]} `;
                                             info.appendChild(detail);
                                             content.appendChild(info);
                                         }
