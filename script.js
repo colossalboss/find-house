@@ -1,6 +1,9 @@
 let search = document.getElementById('search');
 let houses = document.getElementById('houses');
 let find = document.getElementById('find');
+let content = document.getElementById('content');
+
+const emptyContent = (container) => content.innerHTML = '';
 
 const addDetails = (div, name, price, loc, i, elem, response) => {
     name.textContent = response[i].name;
@@ -37,13 +40,14 @@ function init(path, num) {
             addDetails(div, name, price, loc, i, elem, response);  
         }
 
+        /* Make image bigger and display all necessary information */
         content.addEventListener('click', function(e) {
             let target = e.target;
             
             if (e.target.classList.contains('box')) {
-                let content = document.getElementById('content');
 
-                content.innerHTML = '';
+                // content.innerHTML = '';
+                emptyContent(content);
 
                 // for (let res of response) {
                 for (let {id: res, src: path} of response) {
@@ -156,7 +160,8 @@ init('gallery.json', 7);
 
 find.addEventListener('click', function(e) {
     e.preventDefault();
-    content.innerHTML = '';
+    // content.innerHTML = '';
+    emptyContent(content);
 
     $.get('gallery.json', function(res) {
         let numOfHouses = res.length;
