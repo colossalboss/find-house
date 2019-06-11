@@ -1,7 +1,7 @@
 let search = document.getElementById('search');
 let houses = document.getElementById('houses');
 let find = document.getElementById('find');
-let content = document.getElementById('content');
+let content = document.getElementById('houses-container');
 let skulDiv = document.createElement('div');
 let schools = document.getElementById('skul');
 
