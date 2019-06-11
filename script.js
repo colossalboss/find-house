@@ -112,7 +112,7 @@ function init(path, num) {
                 for (let res of response) {
                     if (res.school === mySearch) {
                         arr.push(res);
-                        content.innerHTML = '';
+                        emptyContent(content);
                     }
                     console.log(res.school)
                 }
@@ -128,7 +128,7 @@ function init(path, num) {
                 ddd.setAttribute('src', itm["src"]);
                 ddd.setAttribute('id', itm["id"]);
 
-                // Add box as a class
+                // Add a CSS class of box
                 ddd.classList.add('box');
                 textDiv.classList.add('text-div');
 
@@ -157,7 +157,7 @@ function init(path, num) {
 
 init('gallery.json', 7);
 
-
+/* Load all houses when find house button is clicked */
 find.addEventListener('click', function(e) {
     e.preventDefault();
     // content.innerHTML = '';
