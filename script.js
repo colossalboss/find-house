@@ -2,6 +2,8 @@ let search = document.getElementById('search');
 let houses = document.getElementById('houses');
 let find = document.getElementById('find');
 let content = document.getElementById('content');
+let skulDiv = document.createElement('div');
+
 
 const emptyContent = (container) => content.innerHTML = '';
 
@@ -102,6 +104,7 @@ function init(path, num) {
         });
 
         // Search by school
+        //FIXME
         function searchByArea(e) {
             e.preventDefault();
             let arr = [];
@@ -119,7 +122,6 @@ function init(path, num) {
             }
             
 
-            let skulDiv = document.createElement('div');
             skulDiv.classList.add('skul-div');
             for (let itm of arr) {
                 let ownDiv = document.createElement('div');
