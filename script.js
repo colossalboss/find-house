@@ -6,7 +6,10 @@ let skulDiv = document.createElement('div');
 let schools = document.getElementById('skul');
 
 
-const emptyContent = (container) => content.innerHTML = '';
+const emptyContent = (container) => {
+    content.innerHTML = ''
+    document.getElementById('before').classList.add('hide');
+};
 
 const addDetails = (div, name, price, loc, i, elem, response) => {
     name.textContent = response[i].name;

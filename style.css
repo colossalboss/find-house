@@ -8,7 +8,7 @@ body {
 
 header {
     background-color: rgba(99, 100, 400, 0.5);
-    padding: 10px;
+    padding: 0.5em;
     text-align: center;
 }
 
@@ -234,6 +234,23 @@ a.skul:hover {
 .colored-text {
     font-weight: 700;
     color: green;
+}
+
+.hide {
+    display: none;
+}
+
+.name {
+    font-size: 3em;
+    padding: 0 5em 0 0;
+}
+
+.shift-right {
+    padding: 0 0 0 15em;
+}
+
+.pep {
+    font-size: 1.3em;
 }
 
  @media screen and (max-width: 960px) {
