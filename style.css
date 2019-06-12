@@ -141,12 +141,6 @@ h2.by-area  {
     margin: 0 auto;
 }
 
-#content {
-    width: 90%;
-    padding-left: 5.5em;
-    margin: auto;
-}
-
 .box {
     width: 100%;
     border-radius: 8px;
@@ -185,7 +179,7 @@ h2.by-area  {
     /* width: 90%; */
 }
 
-.image-box {
+/* .image-box {
     background-color: rgba(0, 100, 455, 0.5);
     color: white;
     width: 30%;
@@ -194,7 +188,7 @@ h2.by-area  {
     padding: 0.5em;
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
-}
+} */
 
 .box:hover {
     border: 4px solid blue;
@@ -227,7 +221,7 @@ a.skul:hover {
     width: 70%;
     margin: 2em auto;
     font-size: 1.3em;
-    line-height: 40px;
+    line-height: 1.7em;
 }
 
 .italize-text {
@@ -257,22 +251,71 @@ a.skul:hover {
     font-size: 1.3em;
 }
 
- /* @media screen and (max-width: 960px) {
-    .image-box {
-        max-width: 200px;
-        margin: 2% auto;
-    }
-} */
+ @media screen and (min-width: 900px) {
+     #houses-container {
+         display: flex;
+     }
 
-/* @media screen and (min-width: 960px) {
-    .image-box {
-        max-width: 240px;
-        margin: 1% auto;
+     .image-box {
+        background-color: rgba(0, 100, 455, 0.5);
+        color: white;
+        width: 30%;
+        height: fit-content;
+        margin: 2em auto;
+        padding: 0.5em;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px grey;
     }
-} */
+}
 
-/* @media screen and (max-width: 670px) {
-    .big-image {
-        height: 350px;
+
+ @media screen and (max-width: 899px) {
+     #houses-container {
+         display: flex;
+         width: 100%;
+         padding: 0.5em 0;
+         margin: auto;
+     }
+
+     #content {
+        width: 100%;
+        padding-left: 1.5em;
+        margin: auto;
     }
-} */
+
+     .image-box {
+        background-color: rgba(0, 100, 455, 0.5);
+        color: white;
+        width: 45%;
+        height: fit-content;
+        margin: 0.5em auto;
+        padding: 0.5em;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px grey;
+    }
+}
+
+ @media screen and (max-width: 600px) {
+     #houses-container {
+         display: flex;
+         width: 100%;
+         padding: 0.5em 0;
+     }
+
+     #content {
+        width: 100%;
+        padding-left: 1.5em 0;
+        margin: auto;
+    }
+
+     .image-box {
+        background-color: rgba(0, 100, 455, 0.5);
+        color: white;
+        width: 90%;
+        height: fit-content;
+        margin: 2em auto;
+        padding: 0.5em;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px grey;
+    }
+}
