@@ -94,7 +94,7 @@ input {
 }
 
 .primary {
-    width: 80%;
+    width: 100%;
 }
 
 button {
@@ -118,8 +118,12 @@ h2.by-area  {
     display: flex;
 }
 
+#content {
+    width: 78%;
+}
+
 #side {
-    width: 25%;
+    width: 20%;
     background-color: rgba(0, 0, 455, 0.5);
     margin: 5px;
     border-radius: 8px;
@@ -192,7 +196,7 @@ a.skul:hover {
     color: #fff;
     border: 2px solid grey;
     border-radius: 8px;
-    padding: 0 19px;
+    /* padding: 0 19px; */
 }
 
 .bold-text {
@@ -269,9 +273,13 @@ a.skul:hover {
      }
 
      #content {
-        width: 100%;
+        width: 80%;
         padding-left: 1.5em;
         margin: auto;
+    }
+
+    #side {
+        width: 20%;
     }
 
      .image-box {
@@ -288,15 +296,19 @@ a.skul:hover {
 
  @media screen and (max-width: 600px) {
      #houses-container {
-         display: flex;
+         display: block;
          width: 100%;
          padding: 0.5em 0;
      }
 
      #content {
-        width: 100%;
+        width: 80%;
         padding-left: 1.5em 0;
         margin: auto;
+    }
+
+    #side {
+        width: 20%;
     }
 
     p.pep {
