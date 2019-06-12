@@ -4,6 +4,7 @@ let find = document.getElementById('find');
 let content = document.getElementById('houses-container');
 let skulDiv = document.createElement('div');
 let schools = document.getElementById('skul');
+let complete = document.getElementById('complete');
 
 
 const emptyContent = (container) => {
@@ -176,17 +177,19 @@ function init(path, num) {
 }
 
 // Display houses on page load
-init('gallery.json', 7);
+init('gallery.json', 4);
 
-/* Load all houses when find house button is clicked */
-find.addEventListener('click', function(e) {
-    e.preventDefault();
-    // content.innerHTML = '';
+/* Function to load all images */
+const loadAllImages = (event) => {
+    event.preventDefault();
     emptyContent(content);
 
     $.get('gallery.json', function(res) {
         let numOfHouses = res.length;
         init('gallery.json', numOfHouses);
     });
+}
 
-});
+/* Load all houses when find house or full gallery link is clicked */
+find.addEventListener('click', loadAllImages);
+complete.addEventListener('click', loadAllImages);
