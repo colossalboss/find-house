@@ -237,6 +237,11 @@ a.skul:hover {
     font-size: 1.3em;
 }
 
+#complete {
+    text-align: center;
+    font-size: 1.3em;
+}
+
  @media screen and (min-width: 900px) {
      #houses-container {
          display: flex;
