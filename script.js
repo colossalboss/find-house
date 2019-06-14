@@ -117,62 +117,6 @@ function init(path, num) {
             }
         });
 
-        // Search by school
-        //FIXME
-        function searchByArea(e) {
-            e.preventDefault();
-            let arr = [];
-
-            // If clicked element has CSS class of 'skul', get its text 
-            if (e.target.classList.contains('skul')) {
-                let mySearch = e.target.textContent;
-                console.log({mySearch});
-
-                /*loop through response get all houses within the clicked school and put in an array */
-                for (let res of response) {
-                    if (res.school === mySearch) {
-                        arr.push(res);
-                        emptyContent(content);
-                    }
-                    console.log(res.school)
-                }
-            }
-            
-
-            skulDiv.classList.add('skul-div');
-
-            /* Loop through the array of houses within the same school
-               and display their image and info */
-            for (let itm of arr) {
-                let ownDiv = document.createElement('div');
-                let textDiv = document.createElement('div');
-                let ddd = document.createElement('img');
-                ddd.setAttribute('src', itm["src"]);
-                ddd.setAttribute('id', itm["id"]);
-
-                // Add a CSS class of box
-                ddd.classList.add('box');
-                textDiv.classList.add('text-div');
-
-                for (let idx in itm) {
-                    if (idx !== 'src' && idx !== 'description' && idx !== 'id') {
-                        console.log(itm[idx]);
-                        let text = document.createElement('h4');
-                        text.textContent = itm[idx];
-                        textDiv.appendChild(text);
-                    }
-                }
-
-                ownDiv.appendChild(ddd);
-                ownDiv.appendChild(textDiv);
-                ownDiv.classList.add('own-div');
-                skulDiv.appendChild(ownDiv);
-            }
-            content.appendChild(skulDiv);
-        }
-
-        schools.addEventListener('click', searchByArea);
-
     });
 }
 
@@ -193,3 +137,65 @@ const loadAllImages = (event) => {
 /* Load all houses when find house or full gallery link is clicked */
 find.addEventListener('click', loadAllImages);
 complete.addEventListener('click', loadAllImages);
+
+const build = (itm) => {
+    let ownDiv = document.createElement('div');
+    let textDiv = document.createElement('div');
+    let ddd = document.createElement('img');
+    ddd.setAttribute('src', itm["src"]);
+    ddd.setAttribute('id', itm["id"]);
+
+    // Add a CSS class of box
+    ddd.classList.add('box');
+    textDiv.classList.add('text-div');
+
+    for (let idx in itm) {
+        if (idx !== 'src' && idx !== 'description' && idx !== 'id') {
+            console.log(itm[idx]);
+            let text = document.createElement('h4');
+            text.textContent = itm[idx];
+            textDiv.appendChild(text);
+        }
+    }
+
+    ownDiv.appendChild(ddd);
+    ownDiv.appendChild(textDiv);
+    ownDiv.classList.add('own-div');
+    skulDiv.appendChild(ownDiv);
+}
+
+// Search by school
+//FIXME
+const searchByArea = (e) => {
+    e.preventDefault();
+    emptyContent(content);
+    let arr = [];
+
+    $.get('gallery.json', function(response) {
+        // If clicked element has CSS class of 'skul', get its text 
+        if (e.target.classList.contains('skul')) {
+            let mySearch = e.target.textContent;
+            content.innerHTML = '';
+            console.log({mySearch});
+
+            /*loop through response get all houses within the clicked school and put in an array */
+            for (let res of response) {
+                if (res.school === mySearch) {
+                    arr.push(res);
+                }
+                console.log(res.school)
+            }
+        }
+        
+        skulDiv.classList.add('skul-div');
+
+        /* Loop through the array of houses within the same school
+            and display their image and info */
+            for (let itm of arr) {
+                build(itm);
+            }
+            content.appendChild(skulDiv);
+    });
+}
+
+schools.addEventListener('click', searchByArea);
