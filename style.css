@@ -3,11 +3,11 @@
 }
 
 body {
-    background-color: rgba(99, 100, 455, 0.5);
+    /* background-color: rgba(99, 100, 455, 0.5); */
 }
 
 header {
-    background-color: rgba(99, 100, 400, 0.5);
+    /* background-color: rgba(99, 100, 400, 0.5); */
     padding: 0.5em;
     text-align: center;
 }
@@ -16,8 +16,8 @@ img.big-image {
     margin: 2% auto;
 }
 
-h2 {
-    color: #000;
+h2.side-head {
+    color: red;
 }
 
 .back {
@@ -47,7 +47,7 @@ nav li a {
 
 #zones li {
     list-style: none;
-    padding: 7px
+    padding: 7px;
 }
 
 #zones li a {
@@ -55,9 +55,25 @@ nav li a {
     font-size: 20px;
 }
 
+a.skul {
+    color: white;
+}
+
+li.list a {
+    color: #fff;
+}
+
+h2.by-area {
+    color: red;
+}
+
+p.reg {
+    color: orange;
+}
+
 #zones li a:hover {
     background-color:#fff;
-    color: white;
+    color: #000;
     border: 1px solid grey;
     border-radius: 8px;
     padding: 0 19px;
@@ -111,7 +127,7 @@ button:hover {
 }
 
 h2.by-area  {
-    color: #000;
+    /* color: red; */
 }
 
 .cols {
@@ -124,7 +140,8 @@ h2.by-area  {
 
 #side {
     width: 20%;
-    background-color: rgba(0, 0, 455, 0.5);
+    background-color: navy;
+    color: white;
     margin: 5px;
     border-radius: 8px;
 }
@@ -219,12 +236,18 @@ a.skul:hover {
 
 .italize-text {
     font-style: italic;
-    color: white;
+    color: navy;
+}
+
+.display {
+    background-color: cornsilk;
+    padding: 1.5em;
 }
 
 .colored-text {
     font-weight: 700;
     color: green;
+    font-style: italic;
 }
 
 .hide {
@@ -252,8 +275,8 @@ a.skul:hover {
      }
 
      .image-box {
-        background-color: rgba(0, 100, 455, 0.5);
-        color: white;
+        /* background-color: rgba(0, 100, 455, 0.5); */
+        color: navy;
         width: 30%;
         height: fit-content;
         margin: 2em auto;
