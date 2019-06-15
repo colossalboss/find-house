@@ -8,7 +8,7 @@ let complete = document.getElementById('complete');
 
 
 const emptyContent = (container) => {
-    content.innerHTML = ''
+    container.innerHTML = ''
     document.getElementById('before').classList.add('hide');
 };
 
@@ -165,37 +165,51 @@ const build = (itm) => {
 }
 
 // Search by school
-//FIXME
+//TO DO: Fix this function
+let arr = [];
+
+Array.prototype.empty = function(arr) {
+    arr = [];
+    return arr;
+}
+
 const searchByArea = (e) => {
     e.preventDefault();
-    emptyContent(content);
-    let arr = [];
-
+    console.log(arr, 'before');
+    
     $.get('gallery.json', function(response) {
         // If clicked element has CSS class of 'skul', get its text 
         if (e.target.classList.contains('skul')) {
+            emptyContent(content);
             let mySearch = e.target.textContent;
-            content.innerHTML = '';
-            console.log({mySearch});
+ 
 
-            /*loop through response get all houses within the clicked school and put in an array */
+         /*loop through response get all houses within the clicked school and put in an array */
             for (let res of response) {
                 if (res.school === mySearch) {
                     arr.push(res);
                 }
-                console.log(res.school)
             }
+            // console.log(arr);
         }
         
         skulDiv.classList.add('skul-div');
 
-        /* Loop through the array of houses within the same school
-            and display their image and info */
-            for (let itm of arr) {
-                build(itm);
-            }
-            content.appendChild(skulDiv);
+     /* Loop through the array of houses within the same school
+       and display their image and info */
+        for (let itm of arr) {
+            build(itm);
+        }
+        content.appendChild(skulDiv);
     });
-}
+    arr.length = 0;
+    arr.empty(arr);
+    console.log(arr, 'next');
+    
 
-schools.addEventListener('click', searchByArea);
+}
+schools.addEventListener('click', function(e) {
+    e.preventDefault();
+    searchByArea(e);
+    arr.empty(arr);
+});
