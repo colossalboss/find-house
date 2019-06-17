@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="register.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="name">ULTIMATE AGENT</h1>
+            <h2 class="slogan">Your comfort, Our mission</h2>
+            <p class="pep italize-text shift-right">Do not compromise when it comes to your comfort</p>
+        </header>
+        <nav>
+            <u>
+                <li title="Home"><a href="index.html">Home</a></li>
+                <li title="About Us"><a href="about.html">About</a></li>
+                <li title="Contact Us"><a href="contacts.html">Contacts</a></li>
+                <li title="Find House"><a href="" id="find">Find a house</a></li>
+                <li title="Register"><a href="register.html" id="register">Register</a></li>
+                <li title="Login"><a href="" style="float: right" class="login">Login</a></li>
+            </u>
+        </nav>
+
+        <div class="top">
+            <h2>Create An Account With Us!</h2>
+        </div>
+
+        <div id="form-div">
+            <form action="" id="form">
+                <div class="form-group">
+                    <input type="text" id="" autofocus placeholder="First and last name" required 
+                    pattern="(.*)\s(.*)" />
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="" placeholder="Your email" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="" placeholder="Your password" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm password" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="" placeholder="Your Phone number" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="" placeholder="Where are you now" 
+                    list="direction-data"  />
+
+                    <datalist id="direction-data">
+                        <option value="North"></option>
+                        <option value="South"></option>
+                        <option value="East"></option>
+                        <option value="West"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <input type="button" id="" value="Submit" class="submit-btn" />
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <h2>&copy; My Site</h2>
+        </footer>
+    </body>
+</html>
