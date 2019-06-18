@@ -7,6 +7,8 @@ let schools = document.getElementById('skul');
 let complete = document.getElementById('complete');
 
 
+skulDiv.classList.add('flexy')
+
 const emptyContent = (container) => {
     container.innerHTML = ''
     document.getElementById('before').classList.add('hide');
@@ -168,48 +170,61 @@ const build = (itm) => {
 //TO DO: Fix this function
 let arr = [];
 
-Array.prototype.empty = function(arr) {
-    arr = [];
-    return arr;
-}
-
-const searchByArea = (e) => {
-    e.preventDefault();
-    console.log(arr, 'before');
-    
-    $.get('gallery.json', function(response) {
-        // If clicked element has CSS class of 'skul', get its text 
-        if (e.target.classList.contains('skul')) {
-            emptyContent(content);
-            let mySearch = e.target.textContent;
- 
-
-         /*loop through response get all houses within the clicked school and put in an array */
-            for (let res of response) {
-                if (res.school === mySearch) {
-                    arr.push(res);
-                }
-            }
-            // console.log(arr);
-        }
-        
-        skulDiv.classList.add('skul-div');
-
-     /* Loop through the array of houses within the same school
-       and display their image and info */
-        for (let itm of arr) {
-            build(itm);
-        }
-        content.appendChild(skulDiv);
-    });
-    arr.length = 0;
-    arr.empty(arr);
-    console.log(arr, 'next');
-    
-
-}
 schools.addEventListener('click', function(e) {
     e.preventDefault();
-    searchByArea(e);
-    arr.empty(arr);
+    if (e.target.classList.contains('skul')) {
+        if (!content.innerHTML !== '') {
+            emptyContent(content);
+            emptyContent(skulDiv);
+            e.target.classList.add('active');
+
+            let mySearch = e.target.textContent;
+            console.log(mySearch);
+            
+
+
+            postData(`gallery.json`, {answer: 42})
+            .then(function(data) {
+                data.forEach(element => {
+                    if(element.school === mySearch) {
+                        arr.push(element);
+                    }
+                });
+
+                arr.forEach(element => {
+                    build(element)
+                });
+                content.appendChild(skulDiv);
+
+                console.log(arr, 'b');
+                arr = [];
+                console.log(arr, 'a');
+                
+                
+            }) // JSON-string from `response.json()` call
+            .catch(error => console.error(error));
+        } else {
+            content.innerHTML = '';
+        }
+    }
 });
+
+function postData(url = ``, data = {}) {
+    // Default options are marked with *
+      return fetch(url, {
+          method: "GET", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, cors, *same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              // "Content-Type": "application/x-www-form-urlencoded",
+          },
+          redirect: "follow", // manual, *follow, error
+          referrer: "no-referrer", // no-referrer, *client
+        //   body: JSON.stringify(data), // body data type must match "Content-Type" header
+      })
+      .then(response => response.json()); // parses response to JSON
+  }
+  
+  

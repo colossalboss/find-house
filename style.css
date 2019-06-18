@@ -270,6 +270,12 @@ a.skul:hover {
     font-size: 1.3em;
 }
 
+.flexy {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
  @media screen and (min-width: 900px) {
      #houses-container {
          display: flex;
