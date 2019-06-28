@@ -2,12 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
-    /* background-color: rgba(99, 100, 455, 0.5); */
-}
-
 header {
-    /* background-color: rgba(99, 100, 400, 0.5); */
     padding: 0.5em;
     text-align: center;
     display: flex;
@@ -15,6 +10,7 @@ header {
 
 #canvas {
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .logo {
@@ -23,7 +19,6 @@ header {
 
 .header-details {
     width: 80%;
-    background-color: grey;
 }
 
 img.big-image {
@@ -271,7 +266,7 @@ a.skul:hover {
 
 .name {
     font-size: 3em;
-    padding: 0 5em 0 0;
+    padding: 0 2em 0 0;
 }
 
 
@@ -314,6 +309,14 @@ a.skul:hover {
          width: 100%;
          padding: 0.5em 0;
          margin: auto;
+     }
+
+     .logo {
+         display: none;
+     }
+
+     .header-details {
+         width: 100%;
      }
 
      #content {

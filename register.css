@@ -10,6 +10,20 @@ header {
     background-color: green;
     padding: 10px;
     text-align: center;
+    display: flex;
+}
+
+#canvas {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 20%;
+}
+
+.header-details {
+    width: 80%;
 }
 
 nav {
@@ -91,4 +105,42 @@ input:valid {
 
 .top {
     text-align: center;
+}
+
+@media screen and (max-width: 899px) {
+    /* #houses-container {
+        display: flex;
+        width: 100%;
+        padding: 0.5em 0;
+        margin: auto;
+    } */
+
+    .logo {
+        display: none;
+    }
+
+    .header-details {
+        width: 100%;
+    }
+
+    /* #content {
+       width: 80%;
+       padding-left: 1.5em;
+       margin: auto;
+   }
+
+   #side {
+       width: 20%;
+   }
+
+    .image-box {
+       background-color: rgba(0, 100, 455, 0.5);
+       color: white;
+       width: 45%;
+       height: fit-content;
+       margin: 0.5em auto;
+       padding: 0.5em;
+       border-radius: 10px;
+       box-shadow: 5px 5px 10px grey;
+   } */
 }
